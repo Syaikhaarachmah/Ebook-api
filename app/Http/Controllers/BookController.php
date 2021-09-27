@@ -47,8 +47,9 @@ class BookController extends Controller
         $book->update($request->all());
         $data = Book::latest('updated_at')->first();
         return Response::json([ 
-            'status' => 'Data Edited Successfully',
-            $data
+            'status' => 200,
+            'message' => 'Data Edited Successfully',
+            'data' => $data
 
         ]); 
     }
